@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vcredit.lrhCustomer.dao.LrhCustomerDao">
+	<resultMap id="LrhCustomerMap" type="com.vcredit.lrhCustomer.entity.LrhCustomer">
+		
+		<id column="account_id" property="accountId"/>
+		<result column="customer_name" property="customerName"/>
+		<result column="customer_idcard" property="customerIdcard"/>
+		<result column="customer_mobile" property="customerMobile"/>
+		<result column="create_time" property="createTime"/>
+		<result column="modify_time" property="modifyTime"/>
+		<result column="vbs_sale_sale_agent_id" property="vbsSaleSaleAgentId"/>
+		<result column="vbs_sale_team_name" property="vbsSaleTeamName"/>
+		<result column="vbs_sale_team_full_key" property="vbsSaleTeamFullKey"/>
+		<result column="vbs_sale_store_key" property="vbsSaleStoreKey"/>
+		<result column="vbs_sale_store_name" property="vbsSaleStoreName"/>
+		<result column="vbs_sale_city_name" property="vbsSaleCityName"/>
+		<result column="vbs_sale_region_key" property="vbsSaleRegionKey"/>
+		<result column="recom_time" property="recomTime"/>
+		<result column="online_sale_id" property="onlineSaleId"/>
+		<result column="customer_agent_id" property="customerAgentId"/>
+		<result column="introducer_invite_code" property="introducerInviteCode"/>
+		<result column="open_id" property="openId"/>
+		<result column="vbs_sale_agent_name" property="vbsSaleAgentName"/>
+		<result column="vbs_city_code" property="vbsCityCode"/>
+		<result column="vbs_sales_department_name" property="vbsSalesDepartmentName"/>
+		<result column="vbs_sales_department_key" property="vbsSalesDepartmentKey"/>
+		<result column="vbs_division_name" property="vbsDivisionName"/>
+		<result column="vbs_division_key" property="vbsDivisionKey"/>
+	</resultMap>
+
+	<!--保存 -->
+	<insert id="saveLrhCustomer" parameterType="com.vcredit.lrhCustomer.entity.LrhCustomer" 	useGeneratedKeys="true" 
+		keyProperty="accountId"
+																																																 >
+		insert into lrh_customer 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="accountId != null">
+				account_id,
+			</if>
+			<if test="customerName != null">
+				customer_name,
+			</if>
+			<if test="customerIdcard != null">
+				customer_idcard,
+			</if>
+			<if test="customerMobile != null">
+				customer_mobile,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+			<if test="vbsSaleSaleAgentId != null">
+				vbs_sale_sale_agent_id,
+			</if>
+			<if test="vbsSaleTeamName != null">
+				vbs_sale_team_name,
+			</if>
+			<if test="vbsSaleTeamFullKey != null">
+				vbs_sale_team_full_key,
+			</if>
+			<if test="vbsSaleStoreKey != null">
+				vbs_sale_store_key,
+			</if>
+			<if test="vbsSaleStoreName != null">
+				vbs_sale_store_name,
+			</if>
+			<if test="vbsSaleCityName != null">
+				vbs_sale_city_name,
+			</if>
+			<if test="vbsSaleRegionKey != null">
+				vbs_sale_region_key,
+			</if>
+			<if test="recomTime != null">
+				recom_time,
+			</if>
+			<if test="onlineSaleId != null">
+				online_sale_id,
+			</if>
+			<if test="customerAgentId != null">
+				customer_agent_id,
+			</if>
+			<if test="introducerInviteCode != null">
+				introducer_invite_code,
+			</if>
+			<if test="openId != null">
+				open_id,
+			</if>
+			<if test="vbsSaleAgentName != null">
+				vbs_sale_agent_name,
+			</if>
+			<if test="vbsCityCode != null">
+				vbs_city_code,
+			</if>
+			<if test="vbsSalesDepartmentName != null">
+				vbs_sales_department_name,
+			</if>
+			<if test="vbsSalesDepartmentKey != null">
+				vbs_sales_department_key,
+			</if>
+			<if test="vbsDivisionName != null">
+				vbs_division_name,
+			</if>
+			<if test="vbsDivisionKey != null">
+				vbs_division_key,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="accountId != null">
+				#{accountId},
+			</if>
+			<if test="customerName != null">
+				#{customerName},
+			</if>
+			<if test="customerIdcard != null">
+				#{customerIdcard},
+			</if>
+			<if test="customerMobile != null">
+				#{customerMobile},
+			</if>
+			<if test="createTime != null">
+				#{createTime},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime},
+			</if>
+			<if test="vbsSaleSaleAgentId != null">
+				#{vbsSaleSaleAgentId},
+			</if>
+			<if test="vbsSaleTeamName != null">
+				#{vbsSaleTeamName},
+			</if>
+			<if test="vbsSaleTeamFullKey != null">
+				#{vbsSaleTeamFullKey},
+			</if>
+			<if test="vbsSaleStoreKey != null">
+				#{vbsSaleStoreKey},
+			</if>
+			<if test="vbsSaleStoreName != null">
+				#{vbsSaleStoreName},
+			</if>
+			<if test="vbsSaleCityName != null">
+				#{vbsSaleCityName},
+			</if>
+			<if test="vbsSaleRegionKey != null">
+				#{vbsSaleRegionKey},
+			</if>
+			<if test="recomTime != null">
+				#{recomTime},
+			</if>
+			<if test="onlineSaleId != null">
+				#{onlineSaleId},
+			</if>
+			<if test="customerAgentId != null">
+				#{customerAgentId},
+			</if>
+			<if test="introducerInviteCode != null">
+				#{introducerInviteCode},
+			</if>
+			<if test="openId != null">
+				#{openId},
+			</if>
+			<if test="vbsSaleAgentName != null">
+				#{vbsSaleAgentName},
+			</if>
+			<if test="vbsCityCode != null">
+				#{vbsCityCode},
+			</if>
+			<if test="vbsSalesDepartmentName != null">
+				#{vbsSalesDepartmentName},
+			</if>
+			<if test="vbsSalesDepartmentKey != null">
+				#{vbsSalesDepartmentKey},
+			</if>
+			<if test="vbsDivisionName != null">
+				#{vbsDivisionName},
+			</if>
+			<if test="vbsDivisionKey != null">
+				#{vbsDivisionKey},
+			</if>
+		</trim>
+	</insert>
+	
+	<!--修改-->
+	<update id="updateLrhCustomerById" parameterType="com.vcredit.lrhCustomer.entity.LrhCustomer">
+		update lrh_customer 
+		<set>
+			<if test="accountId != null">
+				account_id=#{accountId},
+			</if>
+			<if test="customerName != null">
+				customer_name=#{customerName},
+			</if>
+			<if test="customerIdcard != null">
+				customer_idcard=#{customerIdcard},
+			</if>
+			<if test="customerMobile != null">
+				customer_mobile=#{customerMobile},
+			</if>
+			<if test="createTime != null">
+				create_time=#{createTime},
+			</if>
+			<if test="modifyTime != null">
+				modify_time=#{modifyTime},
+			</if>
+			<if test="vbsSaleSaleAgentId != null">
+				vbs_sale_sale_agent_id=#{vbsSaleSaleAgentId},
+			</if>
+			<if test="vbsSaleTeamName != null">
+				vbs_sale_team_name=#{vbsSaleTeamName},
+			</if>
+			<if test="vbsSaleTeamFullKey != null">
+				vbs_sale_team_full_key=#{vbsSaleTeamFullKey},
+			</if>
+			<if test="vbsSaleStoreKey != null">
+				vbs_sale_store_key=#{vbsSaleStoreKey},
+			</if>
+			<if test="vbsSaleStoreName != null">
+				vbs_sale_store_name=#{vbsSaleStoreName},
+			</if>
+			<if test="vbsSaleCityName != null">
+				vbs_sale_city_name=#{vbsSaleCityName},
+			</if>
+			<if test="vbsSaleRegionKey != null">
+				vbs_sale_region_key=#{vbsSaleRegionKey},
+			</if>
+			<if test="recomTime != null">
+				recom_time=#{recomTime},
+			</if>
+			<if test="onlineSaleId != null">
+				online_sale_id=#{onlineSaleId},
+			</if>
+			<if test="customerAgentId != null">
+				customer_agent_id=#{customerAgentId},
+			</if>
+			<if test="introducerInviteCode != null">
+				introducer_invite_code=#{introducerInviteCode},
+			</if>
+			<if test="openId != null">
+				open_id=#{openId},
+			</if>
+			<if test="vbsSaleAgentName != null">
+				vbs_sale_agent_name=#{vbsSaleAgentName},
+			</if>
+			<if test="vbsCityCode != null">
+				vbs_city_code=#{vbsCityCode},
+			</if>
+			<if test="vbsSalesDepartmentName != null">
+				vbs_sales_department_name=#{vbsSalesDepartmentName},
+			</if>
+			<if test="vbsSalesDepartmentKey != null">
+				vbs_sales_department_key=#{vbsSalesDepartmentKey},
+			</if>
+			<if test="vbsDivisionName != null">
+				vbs_division_name=#{vbsDivisionName},
+			</if>
+			<if test="vbsDivisionKey != null">
+				vbs_division_key=#{vbsDivisionKey},
+			</if>
+		</set>
+		where 
+		account_id=#{accountId}
+	</update>
+	
+	<!--查询-->
+	<select id="selectLrhCustomerById" resultMap="LrhCustomerMap" parameterType="java.lang.Long">
+		select *
+		from lrh_customer 
+		where
+		account_id=#{accountId}
+	</select>
+	
+	<!--根据条件查询列表-->
+	<select id="selectLrhCustomerListByMap" resultMap="LrhCustomerMap" parameterType="java.util.Map">
+		select *
+		from lrh_customer 
+		where 1=1
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.accountId != null and lrhCustomer.accountId != ''">
+					and account_id=#{lrhCustomer.accountId}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.customerName != null and lrhCustomer.customerName != ''">
+					and customer_name=#{lrhCustomer.customerName}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.customerIdcard != null and lrhCustomer.customerIdcard != ''">
+					and customer_idcard=#{lrhCustomer.customerIdcard}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.customerMobile != null and lrhCustomer.customerMobile != ''">
+					and customer_mobile=#{lrhCustomer.customerMobile}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.createTime != null and lrhCustomer.createTime != ''">
+					and create_time=#{lrhCustomer.createTime}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.modifyTime != null and lrhCustomer.modifyTime != ''">
+					and modify_time=#{lrhCustomer.modifyTime}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsSaleSaleAgentId != null and lrhCustomer.vbsSaleSaleAgentId != ''">
+					and vbs_sale_sale_agent_id=#{lrhCustomer.vbsSaleSaleAgentId}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsSaleTeamName != null and lrhCustomer.vbsSaleTeamName != ''">
+					and vbs_sale_team_name=#{lrhCustomer.vbsSaleTeamName}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsSaleTeamFullKey != null and lrhCustomer.vbsSaleTeamFullKey != ''">
+					and vbs_sale_team_full_key=#{lrhCustomer.vbsSaleTeamFullKey}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsSaleStoreKey != null and lrhCustomer.vbsSaleStoreKey != ''">
+					and vbs_sale_store_key=#{lrhCustomer.vbsSaleStoreKey}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsSaleStoreName != null and lrhCustomer.vbsSaleStoreName != ''">
+					and vbs_sale_store_name=#{lrhCustomer.vbsSaleStoreName}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsSaleCityName != null and lrhCustomer.vbsSaleCityName != ''">
+					and vbs_sale_city_name=#{lrhCustomer.vbsSaleCityName}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsSaleRegionKey != null and lrhCustomer.vbsSaleRegionKey != ''">
+					and vbs_sale_region_key=#{lrhCustomer.vbsSaleRegionKey}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.recomTime != null and lrhCustomer.recomTime != ''">
+					and recom_time=#{lrhCustomer.recomTime}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.onlineSaleId != null and lrhCustomer.onlineSaleId != ''">
+					and online_sale_id=#{lrhCustomer.onlineSaleId}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.customerAgentId != null and lrhCustomer.customerAgentId != ''">
+					and customer_agent_id=#{lrhCustomer.customerAgentId}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.introducerInviteCode != null and lrhCustomer.introducerInviteCode != ''">
+					and introducer_invite_code=#{lrhCustomer.introducerInviteCode}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.openId != null and lrhCustomer.openId != ''">
+					and open_id=#{lrhCustomer.openId}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsSaleAgentName != null and lrhCustomer.vbsSaleAgentName != ''">
+					and vbs_sale_agent_name=#{lrhCustomer.vbsSaleAgentName}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsCityCode != null and lrhCustomer.vbsCityCode != ''">
+					and vbs_city_code=#{lrhCustomer.vbsCityCode}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsSalesDepartmentName != null and lrhCustomer.vbsSalesDepartmentName != ''">
+					and vbs_sales_department_name=#{lrhCustomer.vbsSalesDepartmentName}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsSalesDepartmentKey != null and lrhCustomer.vbsSalesDepartmentKey != ''">
+					and vbs_sales_department_key=#{lrhCustomer.vbsSalesDepartmentKey}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsDivisionName != null and lrhCustomer.vbsDivisionName != ''">
+					and vbs_division_name=#{lrhCustomer.vbsDivisionName}
+				</if>
+			</if>
+			<if test="lrhCustomer != null">
+				<if test="lrhCustomer.vbsDivisionKey != null and lrhCustomer.vbsDivisionKey != ''">
+					and vbs_division_key=#{lrhCustomer.vbsDivisionKey}
+				</if>
+			</if>
+	</select>
+	
+	<!-- 删除 -->
+	<delete id="deleteLrhCustomerById" parameterType="java.lang.Long">
+		delete from lrh_customer  where 
+		account_id=#{accountId}
+	</delete>
+	
+</mapper>
